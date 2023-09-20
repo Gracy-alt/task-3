@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <style>
+        /* CSS styles go here */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #quote-container {
+            padding: 20px;
+            border: 1px solid #eeeeee;
+            background-color: #1e0e13;
+            border-top-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            width: 40%;
+            height: fit-content;
+            color: #fff;
+            font-size: 25px;
+        }
+
+        #generate-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="quote-container">
+        <p id="quote">Loading... </p>
+        <p><button id="generate-button" onclick="getQuote()">Generate New Quote</button></p>
+        
+    </div>
+
+    <script>
+        // JavaScript code goes here
+        let quoteContainer = document.getElementById("quote-container");
+        let quote = document.getElementById("quote");
+        let btngeneratebutton = document.getElementById("generate-button")
+        
+        let randomIndex = Math.floor(Math.random() * 20) + 1;
+        let randomColor = Math.floor(Math.random() * 6) + 1;
+
+
+        let quotes = ["Never you yell" ,"I like criticism. ", "The healthiest response to life is joy.", "Keep calm and carry on.", "Life is a flower of which love is the honey.", "The greatest pleasure of life is love", "Every strike brings me closer to the next home run.", "Life is short", "Every moment is a fresh beginning", "If you love life, dont waste time", " When one door closes, another opens", "Never take life seriously.", "Nobody gets out alive anyway", "Nobody gets out alive anyway.", "Be happy for this moment.", " This moment is your life", "Happiness is like a butterfly", "Don't be afraid to fail.", " It's not the end of the world", "Its never too late", "Enjoy the moments while it last"];
+
+
+        for (let i = 0; i <= quotes.length; i++) {
+            const element = quotes[randomIndex];
+            quote.innerHTML = element;
+           // break ;
+    
+            
+        }
+        function getQuote() {
+            location.reload()
+        
+        }
+        
+        let backgroundColor= [ "red", "green", "rgb(222, 34, 34)", "rgb(132, 255, 0)", "rgb(224, 220, 8)", "rgb(177, 8, 90)"]
+        
+        for (let i = 0; i <= backgroundColor.length; i++) {
+            const element = backgroundColor[randomColor];
+            quoteContainer.style.backgroundColor = element
+            
+        }
+        
+        
+
+
+
+
+    </script>
+</body>
+
+</html>
