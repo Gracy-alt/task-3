@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote Generator</title>
+    
     <style>
         /* CSS styles go here */
         body {
@@ -39,14 +40,19 @@
             color: #fff;
             border: none;
         }
+        #author{
+            font-size: 15px;
+            font-style: italic;
+        }
     </style>
 </head>
 
 <body>
     <div id="quote-container">
         <p id="quote">Loading... </p>
+        <span id="author"></span>
         <p><button id="generate-button" onclick="getQuote()">Generate New Quote</button></p>
-        
+
     </div>
 
     <script>
@@ -54,35 +60,36 @@
         let quoteContainer = document.getElementById("quote-container");
         let quote = document.getElementById("quote");
         let btngeneratebutton = document.getElementById("generate-button")
-        
+        let author = document.getElementById("author")
+
         let randomIndex = Math.floor(Math.random() * 20) + 1;
         let randomColor = Math.floor(Math.random() * 6) + 1;
 
 
-        let quotes = ["Never you yell" ,"I like criticism. ", "The healthiest response to life is joy.", "Keep calm and carry on.", "Life is a flower of which love is the honey.", "The greatest pleasure of life is love", "Every strike brings me closer to the next home run.", "Life is short", "Every moment is a fresh beginning", "If you love life, dont waste time", " When one door closes, another opens", "Never take life seriously.", "Nobody gets out alive anyway", "Nobody gets out alive anyway.", "Be happy for this moment.", " This moment is your life", "Happiness is like a butterfly", "Don't be afraid to fail.", " It's not the end of the world", "Its never too late", "Enjoy the moments while it last"];
+        let quotes = [["Never you yell","Dalai  Lama"], ["“No woman wants to be in submission to a man who isn’t in submission to God!","-John Lennon"], ["The healthiest response to life is joy.","-Stephen King"], ["When a woman becomes her own best friend life is easier.","-Herman Hesse"]  , ["Life is a flower of which love is the honey.","-Mark Twain"], ["The greatest pleasure of life is love","-Eleanor Roosevel"], ["Every strike brings me closer to the next home run.","-Norman Vincent"], ["Try not to become a man of success, but rather become a man of value","-Walter Anderson"], ["Every moment is a fresh beginning","-Diane McLaren"], ["If you love life, dont waste time","-Winston S. Churchill"], [" The successful man will profit from his mistakes and try again in a different way.", "-Colin R. Davis"], ["Never take life seriously.","-David Thoreau"],["When we strive to become better than we are, everything around us becomes better too.","-Dale Carnegie"], ["We are shaped and fashioned by what we love..","-Estee Lauder"], ["Setting goals is the first step in turning the invisible into the visible.","-W. P. Kinsella"], ["Think like a queen. A queen is not afraid to fail. Failure is another stepping stone to greatness.","-Will Rogers"], ["The strongest actions for a woman is to love herself, be herself and shine amongst those who never believed she could."," -Steve Jobs"],["Don't be afraid to fail.","-Vernon Sanders Law"] ,[" The thing women have yet to learn is nobody gives you power. You just take it.","-Dorothy West"] , ["Its never too late","-Tony Robbins"], ["Enjoy the moments while it last"," -Paulo Coelho"]];
 
 
         for (let i = 0; i <= quotes.length; i++) {
             const element = quotes[randomIndex];
-            quote.innerHTML = element;
-           // break ;
-    
-            
+            quote.innerHTML = element [0];
+            author.innerHTML = element[1];
+
+
         }
         function getQuote() {
             location.reload()
-        
+
         }
-        
-        let backgroundColor= [ "red", "green", "rgb(222, 34, 34)", "rgb(132, 255, 0)", "rgb(224, 220, 8)", "rgb(177, 8, 90)"]
-        
+
+        let backgroundColor = ["red", "green", "rgb(222, 34, 34)", "rgb(132, 255, 0)", "rgb(224, 220, 8)", "rgb(177, 8, 90)"]
+
         for (let i = 0; i <= backgroundColor.length; i++) {
             const element = backgroundColor[randomColor];
             quoteContainer.style.backgroundColor = element
-            
+
         }
-        
-        
+
+
 
 
 
